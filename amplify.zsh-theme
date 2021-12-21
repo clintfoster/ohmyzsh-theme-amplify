@@ -15,7 +15,8 @@
 
 # From https://www.xiegerts.com/post/show-current-aws-amplify-environment/
 amplify_prompt () {
-    AMP_PROJ_DIR=$(git rev-parse --show-toplevel 2>/dev/null)  # find root via git
+    # Comment out finding git root since monorepo can have multiple projects in tree
+    #AMP_PROJ_DIR=$(git rev-parse --show-toplevel 2>/dev/null)  # find root via git
     if [ -z "$AMP_PROJ_DIR" ]  # if not in git proj, works only in root
     then
         AMP_PROJ_DIR='.'
